@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANT_VERSION) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   # config.vm.define "vagrant1" do |vagrant1|
   config.vm.define "vagrant1" do |vagrant1|
-    config.vm.box = "ubuntu/trusty64"
+    vagrant1.vm.box = "ubuntu/trusty64"
 
     # Disable automatic box update checking. If you disable this, then
     # boxes will only be checked for updates when the user runs
@@ -25,6 +25,7 @@ Vagrant.configure(VAGRANT_VERSION) do |config|
     # within the machine from a port on the host machine. In the example below,
     # accessing "localhost:8080" will access port 80 on the guest machine.
     # config.vm.network "forwarded_port", guest: 80, host: 8080
+    vagrant1.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true, guest_ip: '127.1.1.10'
 
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
