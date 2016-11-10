@@ -17,11 +17,20 @@ The handson-docker is about learing the docker - containerization technology.
 1. ubuntu commands
 
 #### Tasks
+1. **[V]** Ansible for installing a nginx web server in a vagrant vm
+    1. **[V]** no security configuration for nginx
+    1. **[V]** TLS configuration (443 => 8443)
 1. Manually build a docker image
 1. Building a docker command with build command
 1. Tag a built image
 1. Create the docker-compose.yml for oracle java8/db/wl
 
 
+####Notes
+1. To generate the TLS certificate and key files use the following command (tested on Mac OS)
 
+        $ openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
+            -subj   /CN=localhost \
+            -keyout ansible/playbook/files/nginx.key \
+            -out    ansible/playbook/files/nginx.crt
 
