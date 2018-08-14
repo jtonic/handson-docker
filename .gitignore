@@ -3,10 +3,12 @@
 *.iws
 /out/
 .idea_modules/
-/ansible/playbooks/.vagrant/
 *.iml
 .swp
 *.crt
 *.key
 *_old
 
+.vagrant/
+
+/vagrant/ubuntu-xenial-16.04-cloudimg-console.log
